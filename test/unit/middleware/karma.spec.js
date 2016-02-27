@@ -286,7 +286,7 @@ describe('middleware.karma', () => {
     fsMock._touchFile('/karma/static/context.html', 0, '%MAPPINGS%')
     servedFiles([
       new MockFile("/some/abc/a'b.js", 'sha_a'),
-      new MockFile('/base/path/ba.js', 'sha_b'),
+      new MockFile('/base/path/ba.js', 'sha_b')
     ])
 
     response.once('end', () => {
