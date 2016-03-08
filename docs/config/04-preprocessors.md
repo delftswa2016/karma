@@ -18,7 +18,7 @@ Note: Most of the preprocessors need to be loaded as [plugins].
 ## Available Preprocessors
 - [coffee]
 - [html2js]
-  - Note any .html files listed in the files section must be referenced at run time as `window.__html__['template.html']`. [Learn more](html2js).
+  - Note any .html files listed in the files section must be referenced at run time as `window.__html__['template.html']`. [Learn more](https://github.com/karma-runner/karma-html2js-preprocessor#how-does-it-work-).
   - If this preprocessor is disabled, included .html files will need `base/` added to beginning of their path reference. See [discussion in issue 788][issue788].
 - [coverage]
 - [ng-html2js]
@@ -47,7 +47,7 @@ Of course, you can write [custom plugins] too!
 
 
 ## Configured Preprocessors
-Some of the preprocessors can be also configured:
+Some of the preprocessors can also be configured:
 
 ```javascript
 coffeePreprocessor: {
@@ -69,7 +69,7 @@ customPreprocessors: {
 ```
 
 
-## Minimatching
+## Mini matching
 The keys of the preprocessors config object are used to filter the files specified in
 the `files` configuration.
 
@@ -98,7 +98,7 @@ return `false` and the preprocessor would not be executed on the CoffeeScript fi
 
 If a file matches only one key in the preprocessors config object, then karma
 will execute the preprocessors over that file in the order they are listed in
-the corresponding array.  So for instance if the config object is:
+the corresponding array. So for instance, if the config object is:
 
 ```js
 preprocessors: {
@@ -118,9 +118,7 @@ preprocessors: {
 }
 ```
 
-then for `a.js`, karma will run `'a'` then `'b'` then `'c'`.  If two lists
-contradict eachother, like:
-
+then for `a.js`, karma will run `'a'` then `'b'` then `'c'`.  If two lists contradict each other, like:
 ```js
 preprocessors: {
   '*.js': ['a', 'b'],
@@ -139,4 +137,4 @@ preprocessors: {
 ```
 
 Then `'a'` will definitely be run first, `'d'` will definitely be run last, but
-it's arbitrarily if karma will run `'b'` before `'c'` or vice versa.
+it's arbitrary if karma will run `'b'` before `'c'` or vice versa.
